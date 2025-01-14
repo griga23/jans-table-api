@@ -15,15 +15,15 @@ public class JansTableAPITest {
 
     public static void main(String[] args) {
 
-        TableEnvironment env = TableEnvironment.create(EnvironmentSettings.inStreamingMode());
-
+       TableEnvironment env = TableEnvironment.create(EnvironmentSettings.inStreamingMode());
         env.createTable(SOURCE_TABLE, CLOUD_AVRO_TRANSACTIONS_DESCRIPTOR);
+        
         Table transactionsTable = env.from(SOURCE_TABLE).select(withAllColumns());
-
         transactionsTable.printSchema();
-
-        //env.executeSql("SELECT * FROM transactions").print();
         transactionsTable.execute().print();
+        
+        //env.executeSql("SELECT * FROM transactions").print();
+
 
     }
 
