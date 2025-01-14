@@ -1,2 +1,2 @@
 # jans-table-api
-Jan's example to use Table API
+Jan's example to use Table API!
