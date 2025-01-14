@@ -46,7 +46,7 @@ public class JansTableAPITest {
                     .option("properties.security.protocol", "SASL_SSL")
                     .option("properties.sasl.mechanism", "PLAIN")
                     .option("properties.sasl.jaas.config", "org.apache.kafka.common.security.plain.PlainLoginModule   required username=\"JKPRHZ2XYU6PYK6W\"   password=\"HNfsck/uGONOvHRxcDlxmAgU5JK2XWEqt1EjHWk2d9k28o6QkdQvSAvcc0ZmNryj\";")
-                    .option("topic", "transactions")
+                    .option("topic", SOURCE_TABLE)
                     .option("avro-confluent.url", "https://psrc-4xrp1.eu-central-1.aws.confluent.cloud")
                     .option("avro-confluent.basic-auth.credentials-source","USER_INFO")
                     .option("avro-confluent.basic-auth.user-info","RY7EWBA7FMXI2QCI:8rHsBFVoo7AUb2bW2xDEqoIX22ae2Q/5xJ56fRWgjca0+hUY2A0oaiLOfRbXQRmV")
