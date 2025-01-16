@@ -35,3 +35,5 @@ mc ls dev-minio/flink
 
 confluent flink application create --environment jans-env deploy_example_minio.json
 
+confluent flink application web-ui-forward table-api-minio --environment jans-env
+
