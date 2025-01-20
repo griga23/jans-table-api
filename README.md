@@ -3,6 +3,8 @@ Jan's example to use Table API!
 
 Build docker image 
 ==================
+WARNING: you might need to change the docker source image (depends on your target platform): FROM --platform=linux/amd64 confluentinc/cp-flink:1.19.1-cp1
+
 mvn install -Dmaven.test.skip=true
 
 docker build -t griga/jans-table-api .
@@ -14,6 +16,10 @@ Deploy docker image to CPF
 ==========================
 export CONFLUENT_CMF_URL=http://localhost:8080
 
+confluent flink environment list
+
+confluent flink environment create jans-env --kubernetes-namespace default
+
 confluent flink application list --environment jans-env
 
 confluent flink application create --environment jans-env deploy_example.yaml
@@ -23,6 +29,8 @@ confluent flink application web-ui-forward jans-table-api --environment jans-env
 
 Deploy with Minio
 =================
+WARNING: you need to have Minio client installed locally 
+
 kubectl port-forward pod/minio 9000 9090 -n minio-dev
 
 mc alias set dev-minio http://localhost:9000 minioadmin minioadmin
