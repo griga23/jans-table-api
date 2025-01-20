@@ -5,6 +5,8 @@ Build docker image
 ==================
 WARNING: you might need to change the docker source image (depends on your target platform): FROM --platform=linux/amd64 confluentinc/cp-flink:1.19.1-cp1
 
+WARNING: use Java 11 to compile the source code
+
 mvn install -Dmaven.test.skip=true
 
 docker build -t griga/jans-table-api .
